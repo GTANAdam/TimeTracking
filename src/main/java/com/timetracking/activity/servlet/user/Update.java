@@ -59,6 +59,8 @@ public class Update extends HttpServlet
         Activity activity = activityDAO.getById(id);
         
         logger.debug(activity.toString());
+
+        activity.setName(request.getParameter("name"));
         
         // Set activity data
         if (!request.getParameter("startDate").isEmpty()) 
